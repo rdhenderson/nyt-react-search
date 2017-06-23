@@ -1,0 +1,8 @@
+.panel-body a {
+  word-break: break-all;
+}
+
+.nyt-search {
+  background-color: #20315A;
+  color: white;
+}
