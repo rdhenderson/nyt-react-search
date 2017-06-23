@@ -10,8 +10,9 @@ const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/nytreact';
 
 // Setup Mongoose and add promise model
 mongoose.Promise = Promise;
-mongoose.connect('mongodb://localhost/nytreact');
+mongoose.connect(MONGODB_URI);
 const db = mongoose.connection; // Save mongoose default connection
+
 // This makes sure that any errors are logged if mongodb runs into an issue
 db.on('error', (error) => {
   console.error('Database Error:', error);
