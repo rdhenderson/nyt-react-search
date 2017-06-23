@@ -24,7 +24,6 @@ module.exports = function routes(app) {
     Article.create(req.body, (err, user) => {
       // my new or existing model is loaded as result
       if (err) console.error('ERROR', err);
-
       // Send to favorites route to populate favorites for return
       res.redirect('/api/saved');
     });
@@ -35,7 +34,7 @@ module.exports = function routes(app) {
     Article.remove({_id: req.params.id}, (err) => {
       if (err) console.log("ERROR", err);
 
-      // req.method = "GET";
+      //303 status code -- response should be found with GET request
       res.redirect(303, '/api/saved');
     });
   });
